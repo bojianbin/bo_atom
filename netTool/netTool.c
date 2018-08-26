@@ -24,6 +24,7 @@ int readn(int fd,uint8_t * buf,int size,int max_null_milliseconds)
 
     while(1)
     {
+        FD_ZERO(&rset);
         FD_SET(fd,&rset);
         if(max_null_milliseconds > 0)
         {
@@ -81,6 +82,7 @@ int writen(int fd,uint8_t * buf,int size,int max_null_milliseconds)
     
     while(1)
     {
+        FD_ZERO(&wset);
         FD_SET(fd,&wset);
         if(max_null_milliseconds > 0)
         {
