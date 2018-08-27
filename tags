@@ -29,9 +29,9 @@ ANET_H	netTool/anet.h	32;"	d
 ANET_IP_ONLY	netTool/anet.h	42;"	d
 ANET_NONE	netTool/anet.h	41;"	d
 ANET_OK	netTool/anet.h	36;"	d
-APP_NET_TCP_STATE	Z_my_work_dvoUpgrade/test_client.c	/^}APP_NET_TCP_STATE;$/;"	t	typeref:enum:__anon8	file:
-APP_NET_TCP_STATE_FAIL	Z_my_work_dvoUpgrade/test_client.c	/^    APP_NET_TCP_STATE_FAIL,$/;"	e	enum:__anon8	file:
-APP_NET_TCP_STATE_SUCCESS	Z_my_work_dvoUpgrade/test_client.c	/^    APP_NET_TCP_STATE_SUCCESS = 0,$/;"	e	enum:__anon8	file:
+APP_NET_TCP_STATE	Z_my_work_dvoUpgrade/test_client.c	/^}APP_NET_TCP_STATE;$/;"	t	typeref:enum:__anon9	file:
+APP_NET_TCP_STATE_FAIL	Z_my_work_dvoUpgrade/test_client.c	/^    APP_NET_TCP_STATE_FAIL,$/;"	e	enum:__anon9	file:
+APP_NET_TCP_STATE_SUCCESS	Z_my_work_dvoUpgrade/test_client.c	/^    APP_NET_TCP_STATE_SUCCESS = 0,$/;"	e	enum:__anon9	file:
 B	md5/md5.h	/^    MD5_LONG A, B, C, D;$/;"	m	struct:MD5state_st
 BLOCK_SIZE	Z_my_work_dvoUpgrade/test_client.c	31;"	d	file:
 BUILD_DIR	Z_my_work_atom/Makefile	/^BUILD_DIR = ..\/build$/;"	m
@@ -48,6 +48,8 @@ CFLAGS	Z_my_work_atom/Makefile	/^CFLAGS = -I$(BUILD_DIR)$/;"	m
 CFLAGS	Z_my_work_dvoUpgrade/Makefile	/^CFLAGS = -I$(BUILD_DIR)$/;"	m
 CFLAGS	Z_my_work_memcached/Makefile	/^CFLAGS = -I$(BUILD_DIR)$/;"	m
 CFLAGS	Z_my_work_memcached/test_client/Makefile	/^CFLAGS = -I$(BUILD_DIR)$/;"	m
+CFLAGS	data_structure/red_black/Makefile	/^CFLAGS = $/;"	m
+CFLAGS	data_structure/skiplist/Makefile	/^CFLAGS = $/;"	m
 CLIENT_RECV_CMD_LENGTH	Z_my_work_atom/defines.h	12;"	d
 CLIENT_RECV_CMD_LENGTH	Z_my_work_memcached/defines.h	12;"	d
 CLIENT_RECV_CMD_LENGTH	Z_my_work_memcached/test_client/defines.h	12;"	d
@@ -94,13 +96,15 @@ DICT_OK	redis_dict/dict.h	41;"	d
 DICT_STATS_VECTLEN	redis_dict/dict.c	1008;"	d	file:
 DataType	Z_my_work_dvoUpgrade/test_client.c	/^        uint16_t  DataType;$/;"	m	struct:tagMsgHead_t	file:
 Dict	Z_my_work_memcached/cmd.c	/^dict * Dict = NULL;$/;"	v
-DictItem	Z_my_work_memcached/tcp_server.h	/^}DictItem;$/;"	t	typeref:struct:__anon13
+DictItem	Z_my_work_memcached/tcp_server.h	/^}DictItem;$/;"	t	typeref:struct:__anon14
 ERR_CMD	Z_my_work_atom/cmd.h	14;"	d
 ERR_SENDBUFFERFULL_CMD	Z_my_work_atom/cmd.h	19;"	d
 F	Z_my_work_memcached/test_client/md5.c	202;"	d	file:
 F	md5/md5_locl.h	57;"	d
 FILTER_OUT	Z_my_work_atom/Makefile	/^FILTER_OUT = .\/test_client.o$/;"	m
 FILTER_OUT	Z_my_work_dvoUpgrade/Makefile	/^FILTER_OUT = .\/dvo_ipc_update.o$/;"	m
+FILTER_OUT	data_structure/red_black/Makefile	/^FILTER_OUT = $/;"	m
+FILTER_OUT	data_structure/skiplist/Makefile	/^FILTER_OUT = $/;"	m
 G	Z_my_work_memcached/test_client/md5.c	228;"	d	file:
 G	md5/md5_locl.h	58;"	d
 GET_cmd	Z_my_work_memcached/cmd.c	/^Response* GET_cmd(Cmd *cmd)$/;"	f
@@ -118,6 +122,7 @@ HASH_TRANSFORM	md5/md5_locl.h	34;"	d
 HASH_UPDATE	md5/md32_common.h	/^int HASH_UPDATE(HASH_CTX *c, const void *data_, size_t len)$/;"	f
 HASH_UPDATE	md5/md5_locl.h	33;"	d
 HEADER_MD5_H	md5/md5.h	11;"	d
+HEIGHT_LIMIT	data_structure/red_black/jsw_rbtree.h	32;"	d
 HOST_c2l	md5/md32_common.h	160;"	d
 HOST_c2l	md5/md32_common.h	170;"	d
 HOST_c2l	md5/md32_common.h	181;"	d
@@ -146,19 +151,22 @@ INSTALL_DIR	log/Makefile	/^INSTALL_DIR = ..\/build$/;"	m
 INSTALL_DIR	md5/Makefile	/^INSTALL_DIR = ..\/build$/;"	m
 INSTALL_DIR	netTool/Makefile	/^INSTALL_DIR = ..\/build$/;"	m
 INSTALL_DIR	redis_dict/Makefile	/^INSTALL_DIR = ..\/build$/;"	m
+JSW_RBTREE_H	data_structure/red_black/jsw_rbtree.h	2;"	d
 KETAMA_LIBKETAMA_KETAMA_H__	Z_my_work_memcached/test_client/ketama.h	30;"	d
 LDFLAGS	Z_my_work_atom/Makefile	/^LDFLAGS = -L$(BUILD_DIR) -lae -llog -lmd5 -lnetool -ldict -lpthread$/;"	m
 LDFLAGS	Z_my_work_dvoUpgrade/Makefile	/^LDFLAGS = -L$(BUILD_DIR) -lae -llog -lmd5 -lnetool -ldict -lpthread -lm$/;"	m
 LDFLAGS	Z_my_work_memcached/Makefile	/^LDFLAGS = -L$(BUILD_DIR) -lae -llog -lmd5 -lnetool -ldict$/;"	m
 LDFLAGS	Z_my_work_memcached/test_client/Makefile	/^LDFLAGS = -L$(BUILD_DIR) -lae -llog -lmd5 -lnetool -ldict -lm$/;"	m
-LOG_ALERT	log/log.h	/^    LOG_ALERT,$/;"	e	enum:__anon1
-LOG_ERROR	log/log.h	/^    LOG_ERROR$/;"	e	enum:__anon1
+LDFLAGS	data_structure/red_black/Makefile	/^LDFLAGS = $/;"	m
+LDFLAGS	data_structure/skiplist/Makefile	/^LDFLAGS = $/;"	m
+LOG_ALERT	log/log.h	/^    LOG_ALERT,$/;"	e	enum:__anon2
+LOG_ERROR	log/log.h	/^    LOG_ERROR$/;"	e	enum:__anon2
 LOG_FILE_NAME	log/log.h	11;"	d
-LOG_LEVEL	log/log.h	/^}LOG_LEVEL;$/;"	t	typeref:enum:__anon1
-LOG_NOTICE	log/log.h	/^    LOG_NOTICE = 0,$/;"	e	enum:__anon1
-LotDataAtom	Z_my_work_atom/test_client.c	/^}LotDataAtom;$/;"	t	typeref:struct:__anon6	file:
-LotHead	Z_my_work_atom/test_client.c	/^}LotHead;$/;"	t	typeref:struct:__anon4	file:
-LotMsg	Z_my_work_atom/test_client.c	/^}LotMsg;$/;"	t	typeref:struct:__anon5	file:
+LOG_LEVEL	log/log.h	/^}LOG_LEVEL;$/;"	t	typeref:enum:__anon2
+LOG_NOTICE	log/log.h	/^    LOG_NOTICE = 0,$/;"	e	enum:__anon2
+LotDataAtom	Z_my_work_atom/test_client.c	/^}LotDataAtom;$/;"	t	typeref:struct:__anon7	file:
+LotHead	Z_my_work_atom/test_client.c	/^}LotHead;$/;"	t	typeref:struct:__anon5	file:
+LotMsg	Z_my_work_atom/test_client.c	/^}LotMsg;$/;"	t	typeref:struct:__anon6	file:
 MAGIC_STRING_HEADER	Z_my_work_dvoUpgrade/test_client.c	30;"	d	file:
 MAX_EVENT_BATCHSZ	ae/ae/ae_evport.c	66;"	d	file:
 MC_SHMSIZE	Z_my_work_memcached/test_client/ketama.h	34;"	d
@@ -174,6 +182,8 @@ MD5state_st	md5/md5.h	/^typedef struct MD5state_st {$/;"	s
 MSG_HEADER_LEN	Z_my_work_dvoUpgrade/test_client.c	61;"	d	file:
 Magic1	Z_my_work_dvoUpgrade/test_client.c	/^        char Magic1[4];$/;"	m	struct:tagMsgHead_t	file:
 NET_SYS	Z_my_work_dvoUpgrade/test_client.c	35;"	d	file:
+NUM_DATA	data_structure/red_black/example.c	50;"	d	file:
+NUM_DATA	data_structure/skiplist/main.c	13;"	d	file:
 Nh	md5/md5.h	/^    MD5_LONG Nl, Nh;$/;"	m	struct:MD5state_st
 Nl	md5/md5.h	/^    MD5_LONG Nl, Nh;$/;"	m	struct:MD5state_st
 OBJ	Z_my_work_atom/Makefile	/^OBJ=$(filter-out $(FILTER_OUT),$(OBJ_s))$/;"	m
@@ -181,15 +191,20 @@ OBJ	Z_my_work_dvoUpgrade/Makefile	/^OBJ=$(filter-out $(FILTER_OUT),$(OBJ_s))$/;"
 OBJ	Z_my_work_memcached/Makefile	/^OBJ = $(patsubst %.c,%.o,$(wildcard .\/*.c))$/;"	m
 OBJ	Z_my_work_memcached/test_client/Makefile	/^OBJ = $(patsubst %.c,%.o,$(wildcard .\/*.c))$/;"	m
 OBJ	ae/Makefile	/^OBJ = ae.o$/;"	m
+OBJ	data_structure/red_black/Makefile	/^OBJ=$(filter-out $(FILTER_OUT),$(OBJ_s))$/;"	m
+OBJ	data_structure/skiplist/Makefile	/^OBJ=$(filter-out $(FILTER_OUT),$(OBJ_s))$/;"	m
 OBJ	log/Makefile	/^OBJ = $(patsubst %.c,%.o,$(wildcard .\/*.c))$/;"	m
 OBJ	md5/Makefile	/^OBJ = $(patsubst %.c,%.o,$(wildcard .\/*.c))$/;"	m
 OBJ	netTool/Makefile	/^OBJ = $(patsubst %.c,%.o,$(wildcard .\/*.c))$/;"	m
 OBJ	redis_dict/Makefile	/^OBJ = $(patsubst %.c,%.o,$(wildcard .\/*.c))$/;"	m
 OBJ_s	Z_my_work_atom/Makefile	/^OBJ_s = $(patsubst %.c,%.o,$(wildcard .\/*.c))$/;"	m
 OBJ_s	Z_my_work_dvoUpgrade/Makefile	/^OBJ_s = $(patsubst %.c,%.o,$(wildcard .\/*.c))$/;"	m
+OBJ_s	data_structure/red_black/Makefile	/^OBJ_s = $(patsubst %.c,%.o,$(wildcard .\/*.c))$/;"	m
+OBJ_s	data_structure/skiplist/Makefile	/^OBJ_s = $(patsubst %.c,%.o,$(wildcard .\/*.c))$/;"	m
 PID_FILE_NAME	Z_my_work_atom/defines.h	22;"	d
 PID_FILE_NAME	Z_my_work_memcached/defines.h	22;"	d
 PID_FILE_NAME	Z_my_work_memcached/test_client/defines.h	22;"	d
+Person	data_structure/skiplist/main.c	/^struct Person$/;"	s	file:
 Pktlen	Z_my_work_dvoUpgrade/test_client.c	/^        uint32_t  Pktlen;$/;"	m	struct:tagMsgHead_t	file:
 R0	md5/md5_locl.h	62;"	d
 R1	md5/md5_locl.h	67;"	d
@@ -232,8 +247,8 @@ SET_cmd	Z_my_work_memcached/cmd.c	/^Response * SET_cmd(Cmd *cmd)$/;"	f
 SND_BUFSIZE	Z_my_work_dvoUpgrade/test_client.c	269;"	d	file:
 SUCCESS_CMD	Z_my_work_atom/cmd.h	15;"	d
 SYS_NUCLEAR_UPDATE	Z_my_work_dvoUpgrade/test_client.c	36;"	d	file:
-ServerStat	Z_my_work_atom/tcp_server.h	/^}ServerStat;$/;"	t	typeref:struct:__anon3
-ServerStat	Z_my_work_memcached/tcp_server.h	/^}ServerStat;$/;"	t	typeref:struct:__anon12
+ServerStat	Z_my_work_atom/tcp_server.h	/^}ServerStat;$/;"	t	typeref:struct:__anon4
+ServerStat	Z_my_work_memcached/tcp_server.h	/^}ServerStat;$/;"	t	typeref:struct:__anon13
 Sn	Z_my_work_dvoUpgrade/test_client.c	/^        uint32_t  Sn;$/;"	m	struct:tagMsgHead_t	file:
 T1	Z_my_work_memcached/test_client/md5.c	65;"	d	file:
 T10	Z_my_work_memcached/test_client/md5.c	74;"	d	file:
@@ -304,6 +319,8 @@ TARGET	Z_my_work_dvoUpgrade/Makefile	/^TARGET =dvoUpgrade$/;"	m
 TARGET	Z_my_work_memcached/Makefile	/^TARGET = ae_main$/;"	m
 TARGET	Z_my_work_memcached/test_client/Makefile	/^TARGET = ae_client$/;"	m
 TARGET	ae/Makefile	/^TARGET = libae.a$/;"	m
+TARGET	data_structure/red_black/Makefile	/^TARGET = rbtree$/;"	m
+TARGET	data_structure/skiplist/Makefile	/^TARGET = skiplist$/;"	m
 TARGET	log/Makefile	/^TARGET = liblog.a$/;"	m
 TARGET	md5/Makefile	/^TARGET = libmd5.a$/;"	m
 TARGET	netTool/Makefile	/^TARGET = libnetool.a$/;"	m
@@ -312,6 +329,8 @@ T_MASK	Z_my_work_memcached/test_client/md5.c	64;"	d	file:
 Version	Z_my_work_dvoUpgrade/test_client.c	/^        uint16_t  Version;$/;"	m	struct:tagMsgHead_t	file:
 X	md5/md5_dgst.c	34;"	d	file:
 X	md5/md5_dgst.c	44;"	d	file:
+ZSKIPLIST_MAXLEVEL	data_structure/skiplist/skiplist.h	12;"	d
+ZSKIPLIST_P	data_structure/skiplist/skiplist.h	13;"	d
 _CMD_H	Z_my_work_atom/cmd.h	9;"	d
 _CMD_H	Z_my_work_memcached/cmd.h	9;"	d
 _DEFINES_H	Z_my_work_atom/defines.h	9;"	d
@@ -319,6 +338,7 @@ _DEFINES_H	Z_my_work_memcached/defines.h	9;"	d
 _DEFINES_H	Z_my_work_memcached/test_client/defines.h	9;"	d
 _LOG_H	log/log.h	9;"	d
 _NETTOOL_H	netTool/netTool.h	9;"	d
+_SKIP_H	data_structure/skiplist/skiplist.h	9;"	d
 _TCP_SERVER_H	Z_my_work_atom/tcp_server.h	9;"	d
 _TCP_SERVER_H	Z_my_work_memcached/tcp_server.h	9;"	d
 __AE_H__	ae/ae.h	34;"	d
@@ -345,8 +365,8 @@ _rfds	ae/ae/ae_select.c	/^    fd_set _rfds, _wfds;$/;"	m	struct:aeApiState	file:
 _wfds	ae/ae/ae_select.c	/^    fd_set _rfds, _wfds;$/;"	m	struct:aeApiState	file:
 abcd	Z_my_work_memcached/test_client/md5_2.h	/^    md5_word_t abcd[4];		\/* digest buffer *\/$/;"	m	struct:md5_state_s
 add_hisiHead	Z_my_work_dvoUpgrade/test_client.c	/^int add_hisiHead(char *filename,char *hdversion)$/;"	f
-addr	Z_my_work_atom/test_client.c	/^    uint16_t addr;$/;"	m	struct:__anon6	file:
-addr	Z_my_work_memcached/test_client/ketama.h	/^    char addr[22];$/;"	m	struct:__anon10
+addr	Z_my_work_atom/test_client.c	/^    uint16_t addr;$/;"	m	struct:__anon7	file:
+addr	Z_my_work_memcached/test_client/ketama.h	/^    char addr[22];$/;"	m	struct:__anon11
 aeAddMillisecondsToNow	ae/ae.c	/^static void aeAddMillisecondsToNow(long long milliseconds, long *sec, long *ms) {$/;"	f	file:
 aeApiAddEvent	ae/ae/ae_epoll.c	/^static int aeApiAddEvent(aeEventLoop *eventLoop, int fd, int mask) {$/;"	f	file:
 aeApiAddEvent	ae/ae/ae_evport.c	/^static int aeApiAddEvent(aeEventLoop *eventLoop, int fd, int mask) {$/;"	f	file:
@@ -456,14 +476,20 @@ anetV6Only	netTool/anet.c	/^static int anetV6Only(char *err, int s) {$/;"	f	file
 anetWrite	netTool/anet.c	/^int anetWrite(int fd, char *buf, int count)$/;"	f
 apidata	ae/ae.h	/^    void *apidata; \/* This is used for polling API specific data *\/$/;"	m	struct:aeEventLoop
 app_net_tcp_sn_mac_t	Z_my_work_dvoUpgrade/test_client.c	/^struct app_net_tcp_sn_mac_t$/;"	s	file:
-app_net_tcp_sys_update_head_t	Z_my_work_dvoUpgrade/test_client.c	/^}app_net_tcp_sys_update_head_t;$/;"	t	typeref:struct:__anon7	file:
+app_net_tcp_sys_update_head_t	Z_my_work_dvoUpgrade/test_client.c	/^}app_net_tcp_sys_update_head_t;$/;"	t	typeref:struct:__anon8	file:
 args_num	Z_my_work_memcached/tcp_server.h	/^    int args_num;$/;"	m	struct:Cmd_s
 args_num	Z_my_work_memcached/tcp_server.h	/^    int args_num;$/;"	m	struct:Response_s
 array	Z_my_work_memcached/test_client/ketama.h	/^    ushort *array;        \/* used for GETALL and SETALL *\/$/;"	m	union:semun
-array	Z_my_work_memcached/test_client/ketama.h	/^    void* array; \/\/array of mcs structs$/;"	m	struct:__anon11
+array	Z_my_work_memcached/test_client/ketama.h	/^    void* array; \/\/array of mcs structs$/;"	m	struct:__anon12
+backward	data_structure/skiplist/skiplist.h	/^    struct zskiplistNode *backward;$/;"	m	struct:zskiplistNode	typeref:struct:zskiplistNode::zskiplistNode
 beforesleep	ae/ae.h	/^    aeBeforeSleepProc *beforesleep;$/;"	m	struct:aeEventLoop
 buf	Z_my_work_memcached/test_client/ketama.h	/^    struct semid_ds *buf; \/* for IPC_STAT and IPC_SET *\/$/;"	m	union:semun	typeref:struct:semun::semid_ds
 buf	Z_my_work_memcached/test_client/md5_2.h	/^    md5_byte_t buf[64];		\/* accumulate block *\/$/;"	m	struct:md5_state_s
+centroid	data_structure/red_black/example.c	/^typedef struct centroid {$/;"	s	file:
+centroid_cmp	data_structure/red_black/example.c	/^static int centroid_cmp(const void *p1, const void *p2)$/;"	f	file:
+centroid_dup	data_structure/red_black/example.c	/^static void *centroid_dup(void *p)$/;"	f	file:
+centroid_rel	data_structure/red_black/example.c	/^static void centroid_rel(void *p)$/;"	f	file:
+centroid_t	data_structure/red_black/example.c	/^} centroid_t;$/;"	t	typeref:struct:centroid	file:
 clientAdd	Z_my_work_atom/tcp_server.c	/^void clientAdd(ClientStat * tmp)$/;"	f
 clientAdd	Z_my_work_memcached/tcp_server.c	/^void clientAdd(ClientStat * tmp)$/;"	f
 clientData	ae/ae.h	/^    void *clientData;$/;"	m	struct:aeFileEvent
@@ -471,28 +497,36 @@ clientData	ae/ae.h	/^    void *clientData;$/;"	m	struct:aeTimeEvent
 clientDelete	Z_my_work_atom/tcp_server.c	/^void clientDelete(ClientStat *tmp,struct aeEventLoop *eventloop)$/;"	f
 clientDelete	Z_my_work_memcached/tcp_server.c	/^void clientDelete(ClientStat *tmp,struct aeEventLoop *eventloop)$/;"	f
 client_address	Z_my_work_atom/test_client.c	/^char client_address [50] = {0};$/;"	v
-client_fd	Z_my_work_atom/tcp_server.h	/^    int client_fd;$/;"	m	struct:__anon3
+client_fd	Z_my_work_atom/tcp_server.h	/^    int client_fd;$/;"	m	struct:__anon4
 client_port	Z_my_work_atom/test_client.c	/^int client_port = 0;$/;"	v
 clientfd	Z_my_work_atom/test_client.c	/^int clientfd = 0;$/;"	v
-cmd	Z_my_work_atom/test_client.c	/^    uint8_t cmd;$/;"	m	struct:__anon4	file:
+cmd	Z_my_work_atom/test_client.c	/^    uint8_t cmd;$/;"	m	struct:__anon5	file:
 cmd	Z_my_work_memcached/tcp_server.h	116;"	d
+cmp	data_structure/red_black/jsw_rbtree.h	/^  cmp_f         cmp;  \/* Compare two items *\/$/;"	m	struct:jsw_rbtree
+cmp	data_structure/skiplist/skiplist.h	/^    cmp_func  cmp;$/;"	m	struct:zskiplist
+cmp1	data_structure/skiplist/main.c	/^int cmp1(void *_p1,void *_p2)$/;"	f
+cmp_f	data_structure/red_black/jsw_rbtree.h	/^typedef int   (*cmp_f) ( const void *p1, const void *p2 );$/;"	t
+cmp_func	data_structure/skiplist/skiplist.h	/^typedef int   (*cmp_func) ( void *p1, void *p2 );$/;"	t
 compfn	Z_my_work_memcached/test_client/ketama.h	/^typedef int (*compfn)( const void*, const void* );$/;"	t
-continuum	Z_my_work_memcached/test_client/ketama.h	/^} continuum;$/;"	t	typeref:struct:__anon11
+continuum	Z_my_work_memcached/test_client/ketama.h	/^} continuum;$/;"	t	typeref:struct:__anon12
 count	Z_my_work_memcached/test_client/md5_2.h	/^    md5_word_t count[2];	\/* message length in bits, lsw first *\/$/;"	m	struct:md5_state_s
-crc	Z_my_work_dvoUpgrade/test_client.c	/^    uint32_t crc;$/;"	m	struct:__anon7	file:
+count	data_structure/red_black/example.c	/^  int               count;$/;"	m	struct:centroid	file:
+crc	Z_my_work_dvoUpgrade/test_client.c	/^    uint32_t crc;$/;"	m	struct:__anon8	file:
 crc32	Z_my_work_dvoUpgrade/test_client.c	/^unsigned int crc32(const void *buf, unsigned int size)$/;"	f
 crc32_tab	Z_my_work_dvoUpgrade/test_client.c	/^const unsigned int crc32_tab[] = {$/;"	v
 create_pid_file	Z_my_work_atom/main.c	/^void create_pid_file()$/;"	f
 create_pid_file	Z_my_work_memcached/main.c	/^void create_pid_file()$/;"	f
 cur_cmd_item	Z_my_work_memcached/tcp_server.h	/^    Cmd *cur_cmd_item;$/;"	m	struct:ClientStat_s
-cur_frame	Z_my_work_dvoUpgrade/test_client.c	/^    int cur_frame;$/;"	m	struct:__anon7	file:
+cur_frame	Z_my_work_dvoUpgrade/test_client.c	/^    int cur_frame;$/;"	m	struct:__anon8	file:
 cur_item	Z_my_work_memcached/tcp_server.h	/^    int cur_item;$/;"	m	struct:Cmd_s
 cur_item	Z_my_work_memcached/tcp_server.h	/^    int cur_item;$/;"	m	struct:Response_s
-d	redis_dict/dict.h	/^        double d;$/;"	m	union:dictEntry::__anon2
+d	redis_dict/dict.h	/^        double d;$/;"	m	union:dictEntry::__anon3
 d	redis_dict/dict.h	/^    dict *d;$/;"	m	struct:dictIterator
 daemonize	Z_my_work_atom/main.c	/^void daemonize()$/;"	f
 daemonize	Z_my_work_memcached/main.c	/^void daemonize()$/;"	f
-data	Z_my_work_atom/test_client.c	/^    uint8_t *data;$/;"	m	struct:__anon5	file:
+data	Z_my_work_atom/test_client.c	/^    uint8_t *data;$/;"	m	struct:__anon6	file:
+data	data_structure/red_black/jsw_rbtree.h	/^  void              *data;    \/* User-defined content *\/$/;"	m	struct:jsw_rbnode
+data	data_structure/skiplist/main.c	/^    int data;$/;"	m	struct:Person	file:
 data	md5/md5.h	/^    MD5_LONG data[MD5_LBLOCK];$/;"	m	struct:MD5state_st
 device_func	Z_my_work_atom/cmd.h	/^typedef uint32_t (*device_func)(ClientStat *client,void * data);$/;"	t
 dict	redis_dict/dict.h	/^typedef struct dict {$/;"	s
@@ -560,6 +594,8 @@ dictht	redis_dict/dict.h	/^typedef struct dictht {$/;"	s
 dictht	redis_dict/dict.h	/^} dictht;$/;"	t	typeref:struct:dictht
 dicttype	Z_my_work_memcached/cmd.c	/^dictType dicttype = $/;"	v
 do_protocol	Z_my_work_atom/cmd.c	/^uint32_t do_protocol(ClientStat * arg)$/;"	f
+dup	data_structure/red_black/jsw_rbtree.h	/^  dup_f         dup;  \/* Clone an item (user-defined) *\/$/;"	m	struct:jsw_rbtree
+dup_f	data_structure/red_black/jsw_rbtree.h	/^typedef void *(*dup_f) ( void *p );$/;"	t
 entry	redis_dict/dict.h	/^    dictEntry *entry, *nextEntry;$/;"	m	struct:dictIterator
 epfd	ae/ae/ae_epoll.c	/^    int epfd;$/;"	m	struct:aeApiState	file:
 events	ae/ae.h	/^    aeFileEvent *events; \/* Registered events *\/$/;"	m	struct:aeEventLoop
@@ -569,18 +605,24 @@ evport_debug	ae/ae/ae_evport.c	/^static int evport_debug = 0;$/;"	v	file:
 fd	Z_my_work_atom/tcp_server.h	/^    int fd;$/;"	m	struct:ClientStat_s
 fd	Z_my_work_memcached/tcp_server.h	/^    int fd;$/;"	m	struct:ClientStat_s
 fd	ae/ae.h	/^    int fd;$/;"	m	struct:aeFiredEvent
-file_len	Z_my_work_dvoUpgrade/test_client.c	/^    int file_len;$/;"	m	struct:__anon7	file:
+file_len	Z_my_work_dvoUpgrade/test_client.c	/^    int file_len;$/;"	m	struct:__anon8	file:
 file_modtime	Z_my_work_memcached/test_client/ketama.c	/^file_modtime( char* filename )$/;"	f	file:
 finalizerProc	ae/ae.h	/^    aeEventFinalizerProc *finalizerProc;$/;"	m	struct:aeTimeEvent
 fingerprint	redis_dict/dict.h	/^    long long fingerprint;$/;"	m	struct:dictIterator
 fired	ae/ae.h	/^    aeFiredEvent *fired; \/* Fired events *\/$/;"	m	struct:aeEventLoop
+forward	data_structure/skiplist/skiplist.h	/^        struct zskiplistNode *forward;$/;"	m	struct:zskiplistNode::zskiplistLevel	typeref:struct:zskiplistNode::zskiplistLevel::zskiplistNode
+free	data_structure/red_black/jsw_rbtree.c	/^using std::free;$/;"	m	class:std	file:
+free1	data_structure/skiplist/main.c	/^int free1(void *data)$/;"	f
+free_func	data_structure/skiplist/skiplist.h	/^typedef int   (*free_func) ( void *p1);$/;"	t
+free_obj	data_structure/skiplist/skiplist.h	/^    free_func free_obj;$/;"	m	struct:zskiplist
 gSeq	Z_my_work_atom/tcp_server.h	/^    uint16_t gSeq;$/;"	m	struct:ClientStat_s
 global_log_level	log/log.c	/^LOG_LEVEL global_log_level = LOG_NOTICE;$/;"	v
 hardware_version	Z_my_work_dvoUpgrade/test_client.c	/^	char hardware_version[32];$/;"	m	struct:upgrade_header_s	file:
 hashFunction	redis_dict/dict.h	/^    unsigned int (*hashFunction)(const void *key);$/;"	m	struct:dictType
-head	Z_my_work_atom/test_client.c	/^    LotHead head;$/;"	m	struct:__anon5	file:
+head	Z_my_work_atom/test_client.c	/^    LotHead head;$/;"	m	struct:__anon6	file:
+header	data_structure/skiplist/skiplist.h	/^    struct zskiplistNode *header, *tail;$/;"	m	struct:zskiplist	typeref:struct:zskiplist::zskiplistNode
 ht	redis_dict/dict.h	/^    dictht ht[2];$/;"	m	struct:dict
-id	Z_my_work_atom/test_client.c	/^    uint8_t id[6];$/;"	m	struct:__anon4	file:
+id	Z_my_work_atom/test_client.c	/^    uint8_t id[6];$/;"	m	struct:__anon5	file:
 id	ae/ae.h	/^    long long id; \/* time event identifier. *\/$/;"	m	struct:aeTimeEvent
 index	redis_dict/dict.h	/^    long index;$/;"	m	struct:dictIterator
 index_	Z_my_work_atom/test_client.c	/^static int index_ = 0;$/;"	v	file:
@@ -594,15 +636,38 @@ init_socket	Z_my_work_memcached/main.c	/^int init_socket()$/;"	f
 init_tcp_server	Z_my_work_memcached/tcp_server.c	/^int init_tcp_server()$/;"	f
 ip	Z_my_work_atom/tcp_server.h	/^    char ip[64];$/;"	m	struct:ClientStat_s
 ip	Z_my_work_memcached/tcp_server.h	/^    char ip[64];$/;"	m	struct:ClientStat_s
-ip	Z_my_work_memcached/test_client/ketama.h	/^    char ip[22];$/;"	m	struct:__anon9
-ip_include	Z_my_work_dvoUpgrade/test_client.c	/^    int ip_include;     \/\/ 0:include ip, 1:not include ip.$/;"	m	struct:__anon7	file:
+ip	Z_my_work_memcached/test_client/ketama.h	/^    char ip[22];$/;"	m	struct:__anon10
+ip_include	Z_my_work_dvoUpgrade/test_client.c	/^    int ip_include;     \/\/ 0:include ip, 1:not include ip.$/;"	m	struct:__anon8	file:
 ip_len	netTool/anet.h	49;"	d
-item	Z_my_work_memcached/tcp_server.h	/^    void * item;$/;"	m	struct:__anon13
+is_red	data_structure/red_black/jsw_rbtree.c	/^static int is_red ( jsw_rbnode_t *root )$/;"	f	file:
+it	data_structure/red_black/jsw_rbtree.h	/^  jsw_rbnode_t *it;                 \/* Current node *\/$/;"	m	struct:jsw_rbtrav
+item	Z_my_work_memcached/tcp_server.h	/^    void * item;$/;"	m	struct:__anon14
 item_length	Z_my_work_memcached/tcp_server.h	/^    uint32_t item_length[CMD_ARGS_MAX];$/;"	m	struct:Cmd_s
 item_length	Z_my_work_memcached/tcp_server.h	/^    uint32_t item_length[CMD_ARGS_MAX];$/;"	m	struct:Response_s
 item_pos	Z_my_work_memcached/tcp_server.h	/^    uint32_t item_pos[CMD_ARGS_MAX];$/;"	m	struct:Cmd_s
 item_pos	Z_my_work_memcached/tcp_server.h	/^    uint32_t item_pos[CMD_ARGS_MAX];$/;"	m	struct:Response_s
 iterators	redis_dict/dict.h	/^    int iterators; \/* number of iterators currently running *\/$/;"	m	struct:dict
+jsw_double	data_structure/red_black/jsw_rbtree.c	/^static jsw_rbnode_t *jsw_double ( jsw_rbnode_t *root, int dir )$/;"	f	file:
+jsw_rbdelete	data_structure/red_black/jsw_rbtree.c	/^void jsw_rbdelete ( jsw_rbtree_t *tree )$/;"	f
+jsw_rberase	data_structure/red_black/jsw_rbtree.c	/^int jsw_rberase ( jsw_rbtree_t *tree, void *data )$/;"	f
+jsw_rbfind	data_structure/red_black/jsw_rbtree.c	/^void *jsw_rbfind ( jsw_rbtree_t *tree, void *data )$/;"	f
+jsw_rbfind2	data_structure/red_black/jsw_rbtree.c	/^jsw_rbnode_t* jsw_rbfind2 ( jsw_rbtree_t *tree, void *data )$/;"	f
+jsw_rbinsert	data_structure/red_black/jsw_rbtree.c	/^int jsw_rbinsert ( jsw_rbtree_t *tree, void *data )$/;"	f
+jsw_rbnew	data_structure/red_black/jsw_rbtree.c	/^jsw_rbtree_t *jsw_rbnew ( cmp_f cmp, dup_f dup, rel_f rel )$/;"	f
+jsw_rbnode	data_structure/red_black/jsw_rbtree.h	/^typedef struct jsw_rbnode {$/;"	s
+jsw_rbnode_t	data_structure/red_black/jsw_rbtree.h	/^} jsw_rbnode_t;$/;"	t	typeref:struct:jsw_rbnode
+jsw_rbsize	data_structure/red_black/jsw_rbtree.c	/^size_t jsw_rbsize ( jsw_rbtree_t *tree )$/;"	f
+jsw_rbtdelete	data_structure/red_black/jsw_rbtree.c	/^void jsw_rbtdelete ( jsw_rbtrav_t *trav )$/;"	f
+jsw_rbtfirst	data_structure/red_black/jsw_rbtree.c	/^void *jsw_rbtfirst ( jsw_rbtrav_t *trav, jsw_rbtree_t *tree )$/;"	f
+jsw_rbtlast	data_structure/red_black/jsw_rbtree.c	/^void *jsw_rbtlast ( jsw_rbtrav_t *trav, jsw_rbtree_t *tree )$/;"	f
+jsw_rbtnew	data_structure/red_black/jsw_rbtree.c	/^jsw_rbtrav_t *jsw_rbtnew ( void )$/;"	f
+jsw_rbtnext	data_structure/red_black/jsw_rbtree.c	/^void *jsw_rbtnext ( jsw_rbtrav_t *trav )$/;"	f
+jsw_rbtprev	data_structure/red_black/jsw_rbtree.c	/^void *jsw_rbtprev ( jsw_rbtrav_t *trav )$/;"	f
+jsw_rbtrav	data_structure/red_black/jsw_rbtree.h	/^struct jsw_rbtrav {$/;"	s
+jsw_rbtrav_t	data_structure/red_black/jsw_rbtree.h	/^typedef struct jsw_rbtrav jsw_rbtrav_t;$/;"	t	typeref:struct:jsw_rbtrav
+jsw_rbtree	data_structure/red_black/jsw_rbtree.h	/^struct jsw_rbtree {$/;"	s
+jsw_rbtree_t	data_structure/red_black/jsw_rbtree.h	/^typedef struct jsw_rbtree jsw_rbtree_t;$/;"	t	typeref:struct:jsw_rbtree
+jsw_single	data_structure/red_black/jsw_rbtree.c	/^static jsw_rbnode_t *jsw_single ( jsw_rbnode_t *root, int dir )$/;"	f	file:
 k_error	Z_my_work_memcached/test_client/ketama.c	/^char k_error[255] = "";$/;"	v
 ketama_compare	Z_my_work_memcached/test_client/ketama.c	/^ketama_compare( mcs *a, mcs *b )$/;"	f
 ketama_continuum	Z_my_work_memcached/test_client/ketama.h	/^typedef continuum* ketama_continuum;$/;"	t
@@ -623,8 +688,12 @@ keyDestructor	redis_dict/dict.h	/^    void (*keyDestructor)(void *privdata, void
 keyDup	redis_dict/dict.h	/^    void *(*keyDup)(void *privdata, const void *key);$/;"	m	struct:dictType
 kqfd	ae/ae/ae_kqueue.c	/^    int kqfd;$/;"	m	struct:aeApiState	file:
 lastTime	ae/ae.h	/^    time_t lastTime;     \/* Used to detect system clock skew *\/$/;"	m	struct:aeEventLoop
-len	Z_my_work_atom/test_client.c	/^    uint16_t len;$/;"	m	struct:__anon4	file:
-length	Z_my_work_memcached/tcp_server.h	/^    uint32_t length; $/;"	m	struct:__anon13
+len	Z_my_work_atom/test_client.c	/^    uint16_t len;$/;"	m	struct:__anon5	file:
+length	Z_my_work_memcached/tcp_server.h	/^    uint32_t length; $/;"	m	struct:__anon14
+length	data_structure/skiplist/skiplist.h	/^    unsigned long length;$/;"	m	struct:zskiplist
+level	data_structure/skiplist/skiplist.h	/^    int level;$/;"	m	struct:zskiplist
+level	data_structure/skiplist/skiplist.h	/^    } level[];$/;"	m	struct:zskiplistNode	typeref:struct:zskiplistNode::zskiplistLevel
+link	data_structure/red_black/jsw_rbtree.h	/^  struct jsw_rbnode *link[2]; \/* Left (0) and right (1) links *\/$/;"	m	struct:jsw_rbnode	typeref:struct:jsw_rbnode::jsw_rbnode
 mac	Z_my_work_dvoUpgrade/test_client.c	/^        char mac[40];$/;"	m	struct:app_net_tcp_sn_mac_t	file:
 magic	Z_my_work_dvoUpgrade/test_client.c	/^	char magic[8];$/;"	m	struct:upgrade_header_s	file:
 main	Z_my_work_atom/main.c	/^int main(int argc,char *argv[])$/;"	f
@@ -632,10 +701,15 @@ main	Z_my_work_atom/test_client.c	/^int main()$/;"	f
 main	Z_my_work_dvoUpgrade/test_client.c	/^int main(int argc,char *argv[])$/;"	f
 main	Z_my_work_memcached/main.c	/^int main(int argc,char *argv[])$/;"	f
 main	Z_my_work_memcached/test_client/test_client.c	/^int main(int argc,char *argv[])$/;"	f
+main	data_structure/red_black/example.c	/^int main()$/;"	f
+main	data_structure/skiplist/main.c	/^int main()$/;"	f
+malloc	data_structure/red_black/jsw_rbtree.c	/^using std::malloc;$/;"	m	class:std	file:
 mask	ae/ae.h	/^    int mask; \/* one of AE_(READABLE|WRITABLE) *\/$/;"	m	struct:aeFileEvent
 mask	ae/ae.h	/^    int mask;$/;"	m	struct:aeFiredEvent
+max	data_structure/skiplist/skiplist.h	/^    void * min, *max;$/;"	m	struct:__anon1
+maxex	data_structure/skiplist/skiplist.h	/^    int minex, maxex; \/* are min or max exclusive? *\/$/;"	m	struct:__anon1
 maxfd	ae/ae.h	/^    int maxfd;   \/* highest file descriptor currently registered *\/$/;"	m	struct:aeEventLoop
-mcs	Z_my_work_memcached/test_client/ketama.h	/^} mcs;$/;"	t	typeref:struct:__anon9
+mcs	Z_my_work_memcached/test_client/ketama.h	/^} mcs;$/;"	t	typeref:struct:__anon10
 md5	Z_my_work_dvoUpgrade/test_client.c	/^	unsigned char md5[16];$/;"	m	struct:upgrade_header_s	file:
 md5_INCLUDED	Z_my_work_memcached/test_client/md5_2.h	51;"	d
 md5_append	Z_my_work_memcached/test_client/md5.c	/^md5_append(md5_state_t *pms, const md5_byte_t *data, int nbytes)$/;"	f
@@ -650,12 +724,17 @@ md5_process	Z_my_work_memcached/test_client/md5.c	/^md5_process(md5_state_t *pms
 md5_state_s	Z_my_work_memcached/test_client/md5_2.h	/^typedef struct md5_state_s {$/;"	s
 md5_state_t	Z_my_work_memcached/test_client/md5_2.h	/^} md5_state_t;$/;"	t	typeref:struct:md5_state_s
 md5_word_t	Z_my_work_memcached/test_client/md5_2.h	/^typedef unsigned int md5_word_t; \/* 32-bit word *\/$/;"	t
-memory	Z_my_work_memcached/test_client/ketama.h	/^    unsigned long memory;$/;"	m	struct:__anon10
-modtime	Z_my_work_memcached/test_client/ketama.h	/^    void* modtime;$/;"	m	struct:__anon11
+mean	data_structure/red_black/example.c	/^  int            mean;$/;"	m	struct:centroid	file:
+memory	Z_my_work_memcached/test_client/ketama.h	/^    unsigned long memory;$/;"	m	struct:__anon11
+min	data_structure/skiplist/skiplist.h	/^    void * min, *max;$/;"	m	struct:__anon1
+minex	data_structure/skiplist/skiplist.h	/^    int minex, maxex; \/* are min or max exclusive? *\/$/;"	m	struct:__anon1
+modtime	Z_my_work_memcached/test_client/ketama.h	/^    void* modtime;$/;"	m	struct:__anon12
+move	data_structure/red_black/jsw_rbtree.c	/^static void *move ( jsw_rbtrav_t *trav, int dir )$/;"	f	file:
 myHashfunc	Z_my_work_memcached/cmd.c	/^unsigned int myHashfunc(const void *arg)$/;"	f
 myKeyconpare	Z_my_work_memcached/cmd.c	/^int myKeyconpare(void *privdata,const void * key1,const void *key2)$/;"	f
 myKeyfree	Z_my_work_memcached/cmd.c	/^void myKeyfree(void *pri,void *key)$/;"	f
 myValuefree	Z_my_work_memcached/cmd.c	/^void myValuefree(void *pri,void *value)$/;"	f
+new_node	data_structure/red_black/jsw_rbtree.c	/^static jsw_rbnode_t *new_node ( jsw_rbtree_t *tree, void *data )$/;"	f	file:
 next	Z_my_work_atom/tcp_server.h	/^    struct ClientStat_s * next;$/;"	m	struct:ClientStat_s	typeref:struct:ClientStat_s::ClientStat_s
 next	Z_my_work_memcached/tcp_server.h	/^    struct ClientStat_s * next;$/;"	m	struct:ClientStat_s	typeref:struct:ClientStat_s::ClientStat_s
 next	Z_my_work_memcached/tcp_server.h	/^    struct Cmd_s *next;$/;"	m	struct:Cmd_s	typeref:struct:Cmd_s::Cmd_s
@@ -670,10 +749,12 @@ num_1	Z_my_work_memcached/cmd.c	/^char *num_1 = "*1\\r\\n";$/;"	v
 num_data	Z_my_work_memcached/test_client/ketama.c	/^int num_data = 0;$/;"	v
 num_sem_ids	Z_my_work_memcached/test_client/ketama.c	/^int num_sem_ids = 0;$/;"	v
 num_shm_ids	Z_my_work_memcached/test_client/ketama.c	/^int num_shm_ids = 0;$/;"	v
-numpoints	Z_my_work_memcached/test_client/ketama.h	/^    int numpoints;$/;"	m	struct:__anon11
+numpoints	Z_my_work_memcached/test_client/ketama.h	/^    int numpoints;$/;"	m	struct:__anon12
+obj	data_structure/skiplist/skiplist.h	/^    void *obj;$/;"	m	struct:zskiplistNode
+path	data_structure/red_black/jsw_rbtree.h	/^  jsw_rbnode_t *path[HEIGHT_LIMIT]; \/* Traversal path *\/$/;"	m	struct:jsw_rbtrav
 pending_fds	ae/ae/ae_evport.c	/^    int     pending_fds[MAX_EVENT_BATCHSZ];     \/* pending fds *\/$/;"	m	struct:aeApiState	file:
 pending_masks	ae/ae/ae_evport.c	/^    int     pending_masks[MAX_EVENT_BATCHSZ];   \/* pending fds' masks *\/$/;"	m	struct:aeApiState	file:
-point	Z_my_work_memcached/test_client/ketama.h	/^    unsigned int point;  \/\/ point on circle$/;"	m	struct:__anon9
+point	Z_my_work_memcached/test_client/ketama.h	/^    unsigned int point;  \/\/ point on circle$/;"	m	struct:__anon10
 port	Z_my_work_atom/tcp_server.h	/^    int port;$/;"	m	struct:ClientStat_s
 port	Z_my_work_memcached/tcp_server.h	/^    int port;$/;"	m	struct:ClientStat_s
 portfd	ae/ae/ae_evport.c	/^    int     portfd;                             \/* event port *\/$/;"	m	struct:aeApiState	file:
@@ -682,6 +763,7 @@ pre	Z_my_work_memcached/tcp_server.h	/^    struct ClientStat_s * pre;$/;"	m	stru
 print_usage	Z_my_work_dvoUpgrade/test_client.c	/^void print_usage()$/;"	f
 privdata	redis_dict/dict.h	/^    void *privdata;$/;"	m	struct:dict
 processTimeEvents	ae/ae.c	/^static int processTimeEvents(aeEventLoop *eventLoop) {$/;"	f	file:
+random	data_structure/skiplist/main.c	/^    int random;$/;"	m	struct:Person	file:
 read_data	Z_my_work_memcached/test_client/test_client.c	/^void * read_data(void *arg)$/;"	f
 read_server_definitions	Z_my_work_memcached/test_client/ketama.c	/^read_server_definitions( char* filename, unsigned int* count, unsigned long* memory )$/;"	f	file:
 read_server_line	Z_my_work_memcached/test_client/ketama.c	/^read_server_line( char* line )$/;"	f	file:
@@ -696,15 +778,19 @@ recv_cmd_queue_tail	Z_my_work_memcached/tcp_server.h	/^    Cmd *recv_cmd_queue_t
 recv_pos	Z_my_work_atom/tcp_server.h	/^    int recv_pos;$/;"	m	struct:ClientStat_s
 recv_pos	Z_my_work_memcached/tcp_server.h	/^    int recv_pos;$/;"	m	struct:ClientStat_s
 recv_trigger	Z_my_work_atom/test_client.c	/^void * recv_trigger(void * arg)$/;"	f
-register_addr	Z_my_work_atom/test_client.c	/^    uint8_t register_addr;$/;"	m	struct:__anon6	file:
+red	data_structure/red_black/jsw_rbtree.h	/^  int                red;     \/* Color (1=red, 0=black) *\/$/;"	m	struct:jsw_rbnode
+register_addr	Z_my_work_atom/test_client.c	/^    uint8_t register_addr;$/;"	m	struct:__anon7	file:
 rehashidx	redis_dict/dict.h	/^    long rehashidx; \/* rehashing not in progress if rehashidx == -1 *\/$/;"	m	struct:dict
-reserve	Z_my_work_dvoUpgrade/test_client.c	/^    int reserve[4];$/;"	m	struct:__anon7	file:
+rel	data_structure/red_black/jsw_rbtree.h	/^  rel_f         rel;  \/* Destroy an item (user-defined) *\/$/;"	m	struct:jsw_rbtree
+rel_f	data_structure/red_black/jsw_rbtree.h	/^typedef void  (*rel_f) ( void *p );$/;"	t
+reserve	Z_my_work_dvoUpgrade/test_client.c	/^    int reserve[4];$/;"	m	struct:__anon8	file:
 rev	Z_my_work_dvoUpgrade/test_client.c	/^	char rev[72];$/;"	m	struct:upgrade_header_s	file:
 rev	Z_my_work_dvoUpgrade/test_client.c	/^        char rev[88];$/;"	m	struct:app_net_tcp_sn_mac_t	file:
 rev	redis_dict/dict.c	/^static unsigned long rev(unsigned long v) {$/;"	f	file:
 rfds	ae/ae/ae_select.c	/^    fd_set rfds, wfds;$/;"	m	struct:aeApiState	file:
 rfileProc	ae/ae.h	/^    aeFileProc *rfileProc;$/;"	m	struct:aeFileEvent
-s64	redis_dict/dict.h	/^        int64_t s64;$/;"	m	union:dictEntry::__anon2
+root	data_structure/red_black/jsw_rbtree.h	/^  jsw_rbnode_t *root; \/* Top of the tree *\/$/;"	m	struct:jsw_rbtree
+s64	redis_dict/dict.h	/^        int64_t s64;$/;"	m	union:dictEntry::__anon3
 safe	redis_dict/dict.h	/^    int table, safe;$/;"	m	struct:dictIterator
 save_log	log/log.c	/^int save_log(const char *str, ...)$/;"	f
 sem_ids	Z_my_work_memcached/test_client/ketama.c	/^int *sem_ids = NULL;$/;"	v
@@ -721,15 +807,15 @@ send_response_handle	Z_my_work_atom/tcp_server.c	/^void send_response_handle(str
 send_response_handle	Z_my_work_memcached/tcp_server.c	/^void send_response_handle(struct aeEventLoop *eventloop,int fd,void *clientData,int mask)$/;"	f
 send_response_queue_head	Z_my_work_memcached/tcp_server.h	/^    Response *send_response_queue_head ;$/;"	m	struct:ClientStat_s
 send_response_queue_tail	Z_my_work_memcached/tcp_server.h	/^    Response *send_response_queue_tail ;$/;"	m	struct:ClientStat_s
-seq	Z_my_work_atom/test_client.c	/^    uint16_t seq;$/;"	m	struct:__anon4	file:
+seq	Z_my_work_atom/test_client.c	/^    uint16_t seq;$/;"	m	struct:__anon5	file:
 server_accept_handle	Z_my_work_atom/tcp_server.c	/^void server_accept_handle(struct aeEventLoop *eventloop,int fd,void *clientData,int mask)$/;"	f
 server_accept_handle	Z_my_work_memcached/tcp_server.c	/^void server_accept_handle(struct aeEventLoop *eventloop,int fd,void *clientData,int mask)$/;"	f
-server_fd	Z_my_work_atom/tcp_server.h	/^    int server_fd;$/;"	m	struct:__anon3
-server_fd	Z_my_work_memcached/tcp_server.h	/^    int server_fd;$/;"	m	struct:__anon12
+server_fd	Z_my_work_atom/tcp_server.h	/^    int server_fd;$/;"	m	struct:__anon4
+server_fd	Z_my_work_memcached/tcp_server.h	/^    int server_fd;$/;"	m	struct:__anon13
 server_log	log/log.h	20;"	d
 server_stat	Z_my_work_atom/main.c	/^ServerStat server_stat;$/;"	v
 server_stat	Z_my_work_memcached/main.c	/^ServerStat server_stat;$/;"	v
-serverinfo	Z_my_work_memcached/test_client/ketama.h	/^} serverinfo;$/;"	t	typeref:struct:__anon10
+serverinfo	Z_my_work_memcached/test_client/ketama.h	/^} serverinfo;$/;"	t	typeref:struct:__anon11
 set_err_str	Z_my_work_memcached/cmd.c	/^char *set_err_str = "*1\\r\\nS3\\r\\nERR\\r\\n";$/;"	v
 set_error	Z_my_work_memcached/test_client/ketama.c	/^set_error(const char *format, ...) {$/;"	f	file:
 set_ok_str	Z_my_work_memcached/cmd.c	/^char *set_ok_str = "*1\\r\\n$2\\r\\nOK\\r\\n";$/;"	v
@@ -741,34 +827,41 @@ shm_ids_size	Z_my_work_memcached/test_client/ketama.c	/^int shm_ids_size = 1024;
 shutdownNow	Z_my_work_atom/main.c	/^void shutdownNow(int arg)$/;"	f
 shutdownNow	Z_my_work_memcached/main.c	/^void shutdownNow(int arg)$/;"	f
 simple	Z_my_work_memcached/test_client/test_client.c	/^void simple()$/;"	f
+size	data_structure/red_black/jsw_rbtree.h	/^  size_t        size; \/* Number of items (user-defined) *\/$/;"	m	struct:jsw_rbtree
 size	redis_dict/dict.h	/^    unsigned long size;$/;"	m	struct:dictht
+size_t	data_structure/red_black/jsw_rbtree.c	/^using std::size_t;$/;"	m	class:std	file:
 sizemask	redis_dict/dict.h	/^    unsigned long sizemask;$/;"	m	struct:dictht
 sn	Z_my_work_dvoUpgrade/test_client.c	/^        char sn[32];$/;"	m	struct:app_net_tcp_sn_mac_t	file:
-start	Z_my_work_atom/test_client.c	/^    uint8_t start;$/;"	m	struct:__anon4	file:
+span	data_structure/skiplist/skiplist.h	/^        unsigned int span;$/;"	m	struct:zskiplistNode::zskiplistLevel
+start	Z_my_work_atom/test_client.c	/^    uint8_t start;$/;"	m	struct:__anon5	file:
 start	Z_my_work_memcached/test_client/test_client.c	/^int start = 0;$/;"	v
+start	data_structure/red_black/jsw_rbtree.c	/^static void *start ( jsw_rbtrav_t *trav, jsw_rbtree_t *tree, int dir )$/;"	f	file:
 stop	ae/ae.h	/^    int stop;$/;"	m	struct:aeEventLoop
 table	redis_dict/dict.h	/^    dictEntry **table;$/;"	m	struct:dictht
 table	redis_dict/dict.h	/^    int table, safe;$/;"	m	struct:dictIterator
-tag	Z_my_work_atom/test_client.c	/^    uint8_t tag;$/;"	m	struct:__anon6	file:
+tag	Z_my_work_atom/test_client.c	/^    uint8_t tag;$/;"	m	struct:__anon7	file:
 tagMsgHead_t	Z_my_work_dvoUpgrade/test_client.c	/^typedef struct tagMsgHead_t$/;"	s	file:
 tagMsgHead_t	Z_my_work_dvoUpgrade/test_client.c	/^}tagMsgHead_t;$/;"	t	typeref:struct:tagMsgHead_t	file:
+tail	data_structure/skiplist/skiplist.h	/^    struct zskiplistNode *header, *tail;$/;"	m	struct:zskiplist	typeref:struct:zskiplist::
 timeEventHead	ae/ae.h	/^    aeTimeEvent *timeEventHead;$/;"	m	struct:aeEventLoop
 timeEventNextId	ae/ae.h	/^    long long timeEventNextId;$/;"	m	struct:aeEventLoop
 timeInMilliseconds	redis_dict/dict.c	/^long long timeInMilliseconds(void) {$/;"	f
 timeProc	ae/ae.h	/^    aeTimeProc *timeProc;$/;"	m	struct:aeTimeEvent
 time_event_id	Z_my_work_atom/tcp_server.h	/^    long long time_event_id[5];$/;"	m	struct:ClientStat_s
-total_frame	Z_my_work_dvoUpgrade/test_client.c	/^    int total_frame;$/;"	m	struct:__anon7	file:
+top	data_structure/red_black/jsw_rbtree.h	/^  size_t        top;                \/* Top of stack *\/$/;"	m	struct:jsw_rbtrav
+total_frame	Z_my_work_dvoUpgrade/test_client.c	/^    int total_frame;$/;"	m	struct:__anon8	file:
 track_sem_id	Z_my_work_memcached/test_client/ketama.c	/^track_sem_id(int semid) {$/;"	f	file:
 track_shm_data	Z_my_work_memcached/test_client/ketama.c	/^track_shm_data(int *data) {$/;"	f	file:
 track_shm_id	Z_my_work_memcached/test_client/ketama.c	/^track_shm_id(int shmid) {$/;"	f	file:
+tree	data_structure/red_black/jsw_rbtree.h	/^  jsw_rbtree_t *tree;               \/* Paired tree *\/$/;"	m	struct:jsw_rbtrav
 type	redis_dict/dict.h	/^    dictType *type;$/;"	m	struct:dict
-u64	redis_dict/dict.h	/^        uint64_t u64;$/;"	m	union:dictEntry::__anon2
+u64	redis_dict/dict.h	/^        uint64_t u64;$/;"	m	union:dictEntry::__anon3
 upgrade_head_t	Z_my_work_dvoUpgrade/test_client.c	/^} upgrade_head_t;$/;"	t	typeref:struct:upgrade_header_s	file:
 upgrade_header_s	Z_my_work_dvoUpgrade/test_client.c	/^typedef struct upgrade_header_s {$/;"	s	file:
 used	redis_dict/dict.h	/^    unsigned long used;$/;"	m	struct:dictht
-v	redis_dict/dict.h	/^    } v;$/;"	m	struct:dictEntry	typeref:union:dictEntry::__anon2
+v	redis_dict/dict.h	/^    } v;$/;"	m	struct:dictEntry	typeref:union:dictEntry::__anon3
 val	Z_my_work_memcached/test_client/ketama.h	/^    int val;              \/* used for SETVAL only *\/$/;"	m	union:semun
-val	redis_dict/dict.h	/^        void *val;$/;"	m	union:dictEntry::__anon2
+val	redis_dict/dict.h	/^        void *val;$/;"	m	union:dictEntry::__anon3
 valDestructor	redis_dict/dict.h	/^    void (*valDestructor)(void *privdata, void *obj);$/;"	m	struct:dictType
 valDup	redis_dict/dict.h	/^    void *(*valDup)(void *privdata, const void *obj);$/;"	m	struct:dictType
 value	Z_my_work_memcached/tcp_server.h	/^    char *value[CMD_ARGS_MAX];$/;"	m	struct:Cmd_s
@@ -778,3 +871,26 @@ wfileProc	ae/ae.h	/^    aeFileProc *wfileProc;$/;"	m	struct:aeFileEvent
 when_ms	ae/ae.h	/^    long when_ms; \/* milliseconds *\/$/;"	m	struct:aeTimeEvent
 when_sec	ae/ae.h	/^    long when_sec; \/* seconds *\/$/;"	m	struct:aeTimeEvent
 writen	netTool/netTool.c	/^int writen(int fd,uint8_t * buf,int size,int max_null_milliseconds)$/;"	f
+zrangespec	data_structure/skiplist/skiplist.h	/^} zrangespec;$/;"	t	typeref:struct:__anon1
+zskiplist	data_structure/skiplist/skiplist.h	/^typedef struct zskiplist $/;"	s
+zskiplist	data_structure/skiplist/skiplist.h	/^} zskiplist;$/;"	t	typeref:struct:zskiplist
+zskiplistLevel	data_structure/skiplist/skiplist.h	/^    struct zskiplistLevel $/;"	s	struct:zskiplistNode
+zskiplistNode	data_structure/skiplist/skiplist.h	/^typedef struct zskiplistNode $/;"	s
+zskiplistNode	data_structure/skiplist/skiplist.h	/^} zskiplistNode;$/;"	t	typeref:struct:zskiplistNode
+zslCreate	data_structure/skiplist/skiplist.c	/^zskiplist *zslCreate(cmp_func cmp,free_func _free) {$/;"	f
+zslCreateNode	data_structure/skiplist/skiplist.c	/^zskiplistNode *zslCreateNode(int level,void *obj) {$/;"	f
+zslDelete	data_structure/skiplist/skiplist.c	/^int zslDelete(zskiplist *zsl,void *obj) {$/;"	f
+zslDeleteNode	data_structure/skiplist/skiplist.c	/^void zslDeleteNode(zskiplist *zsl, zskiplistNode *x, zskiplistNode **update) {$/;"	f
+zslDeleteRange	data_structure/skiplist/skiplist.c	/^unsigned long zslDeleteRange(zskiplist *zsl, zrangespec *range) {$/;"	f
+zslDeleteRangeByRank	data_structure/skiplist/skiplist.c	/^unsigned long zslDeleteRangeByRank(zskiplist *zsl, unsigned int start, unsigned int end) $/;"	f
+zslFirstInRange	data_structure/skiplist/skiplist.c	/^zskiplistNode *zslFirstInRange(zskiplist *zsl, zrangespec *range) {$/;"	f
+zslFree	data_structure/skiplist/skiplist.c	/^void zslFree(zskiplist *zsl) {$/;"	f
+zslFreeNode	data_structure/skiplist/skiplist.c	/^void zslFreeNode(zskiplist *zsl,zskiplistNode *node) {$/;"	f
+zslGetElementByRank	data_structure/skiplist/skiplist.c	/^zskiplistNode* zslGetElementByRank(zskiplist *zsl, unsigned long rank) {$/;"	f
+zslGetRank	data_structure/skiplist/skiplist.c	/^unsigned long zslGetRank(zskiplist *zsl, void *o) {$/;"	f
+zslInsert	data_structure/skiplist/skiplist.c	/^zskiplistNode *zslInsert(zskiplist *zsl, void *obj) {$/;"	f
+zslIsInRange	data_structure/skiplist/skiplist.c	/^int zslIsInRange(zskiplist *zsl, zrangespec *range) {$/;"	f
+zslLastInRange	data_structure/skiplist/skiplist.c	/^zskiplistNode *zslLastInRange(zskiplist *zsl, zrangespec *range) {$/;"	f
+zslRandomLevel	data_structure/skiplist/skiplist.c	/^int zslRandomLevel(void) {$/;"	f
+zslValueGteMin	data_structure/skiplist/skiplist.c	/^static int zslValueGteMin(zskiplist *zsl, void * value, zrangespec *spec) {$/;"	f	file:
+zslValueLteMax	data_structure/skiplist/skiplist.c	/^int zslValueLteMax(zskiplist * zsl, void * value, zrangespec *spec) {$/;"	f
