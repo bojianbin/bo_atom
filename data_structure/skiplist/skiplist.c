@@ -154,7 +154,7 @@ void zslDeleteNode(zskiplist *zsl, zskiplistNode *x, zskiplistNode **update) {
     zsl->length--;
 }
 
-/* Delete an element with matching score/object from the skiplist. */
+/* Delete an element with matching object from the skiplist. */
 int zslDelete(zskiplist *zsl,void *obj) {
     zskiplistNode *update[ZSKIPLIST_MAXLEVEL], *x;
     int i;
@@ -166,8 +166,6 @@ int zslDelete(zskiplist *zsl,void *obj) {
             x = x->level[i].forward;
         update[i] = x;
     }
-    /* We may have multiple elements with the same score, what we need
-     * is to find the element with both the right score and object. */
     x = x->level[0].forward;
     if (x && zsl->cmp(x->level[i].forward->obj,obj) == 0) {
         zslDeleteNode(zsl, x, update);
@@ -227,7 +225,7 @@ zskiplistNode *zslFirstInRange(zskiplist *zsl, zrangespec *range) {
     /* This is an inner range, so the next node cannot be NULL. */
     x = x->level[0].forward;
 
-    /* Check if score <= max. */
+    /* Check if  <= max. */
     if (!zslValueLteMax(zsl,x->obj,range)) return NULL;
     return x;
 }
@@ -250,13 +248,13 @@ zskiplistNode *zslLastInRange(zskiplist *zsl, zrangespec *range) {
     }
 
 
-    /* Check if score >= min. */
+    /* Check if  >= min. */
     if (!zslValueGteMin(zsl,x->obj,range)) return NULL;
     return x;
 }
 
-/* Delete all the elements with score between min and max from the skiplist.
- * Min and max are inclusive, so a score >= min || score <= max is deleted.
+/* Delete all the elements between min and max from the skiplist.
+ * Min and max are inclusive, so a  >= min ||  <= max is deleted.
  * Note that this function takes the reference to the hash table view of the
  * sorted set, in order to remove the elements from the hash table too. */
 unsigned long zslDeleteRange(zskiplist *zsl, zrangespec *range) {
@@ -273,7 +271,6 @@ unsigned long zslDeleteRange(zskiplist *zsl, zrangespec *range) {
         update[i] = x;
     }
 
-    /* Current node is the last with score < or <= min. */
     x = x->level[0].forward;
 
     /* Delete nodes while in range. */
@@ -320,7 +317,7 @@ unsigned long zslDeleteRangeByRank(zskiplist *zsl, unsigned int start, unsigned 
     return removed;
 }
 
-/* Find the rank for an element by both score and key.
+/* Find the rank for an element.
  * Returns 0 when the element cannot be found, rank otherwise.
  * Note that the rank is 1-based due to the span of zsl->header to the
  * first element. */
