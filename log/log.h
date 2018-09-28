@@ -9,6 +9,8 @@
 #define _LOG_H
 
 #define LOG_FILE_NAME "/var/run/ae_main.log"
+#define LOG_FILE_MAX_SIZE ( 512 * 1024)
+
 typedef enum
 {
     LOG_NOTICE = 0,
