@@ -1,6 +1,7 @@
-TARGET = ae_main
+
+TARGET = sample_server
 BUILD_DIR = ../build
-FILTER_OUT = ./test_client.o
+FILTER_OUT = 
 OBJ_s = $(patsubst %.c,%.o,$(wildcard ./*.c))
 CFLAGS = -I$(BUILD_DIR)
 LDFLAGS = -L$(BUILD_DIR) -lae -llog -lmd5 -lnetool -ldict -lpthread

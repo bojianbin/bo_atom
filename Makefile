@@ -8,6 +8,7 @@ PKG_SUBDIRS +=data_structure
 #my work
 PKG_SUBDIRS +=Z_my_work_mem
 PKG_SUBDIRS +=Z_my_work_upgrade
+PKG_SUBDIRS +=Z_my_work
 
 
 include default.mk
