@@ -652,3 +652,38 @@ int anetFormatSock(int fd, char *fmt, size_t fmt_len) {
     anetSockName(fd,ip,sizeof(ip),&port);
     return anetFormatAddr(fmt, fmt_len, ip, port);
 }
+int _anetbuf(int sfd, int sndsize,int mode) 
+{
+    socklen_t intsize = sizeof(int);
+    int max = sndsize;
+    int old_size = -1;
+
+    if (getsockopt(sfd, SOL_SOCKET, mode, &old_size, &intsize) != 0) 
+	{
+        return -1;
+    }
+
+    while (max > 0) 
+	{
+        if (setsockopt(sfd, SOL_SOCKET, mode, (void *)&max, intsize) == 0) 
+		{
+			return max;
+			
+        } else 
+		{
+			max = max / 2;
+        }
+    }
+
+	return old_size;
+	
+}
+
+int anetSndbuf(int sfd, int sndsize) 
+{
+	return _anetbuf(sfd, sndsize, SO_SNDBUF);
+}
+int anetRcvbuf(int sfd, int sndsize)
+{
+	return _anetbuf(sfd, sndsize, SO_RCVBUF);
+}
