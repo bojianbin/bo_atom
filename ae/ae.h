@@ -34,6 +34,7 @@
 #define __AE_H__
 
 #include <time.h>
+#include <signal.h>
 
 #define AE_OK 0
 #define AE_ERR -1
@@ -50,6 +51,8 @@
 #define AE_NOMORE -1
 #define AE_DELETED_EVENT_ID -1
 
+#define AE_SIGNUM 64
+
 /* Macros */
 #define AE_NOTUSED(V) ((void) V)
 
@@ -57,6 +60,7 @@ struct aeEventLoop;
 
 /* Types and data structures */
 typedef void aeFileProc(struct aeEventLoop *eventLoop, int fd, void *clientData, int mask);
+typedef void aeSignalProc(struct aeEventLoop *eventLoop, int sig, void *clientData);
 typedef int aeTimeProc(struct aeEventLoop *eventLoop, long long id, void *clientData);
 typedef void aeEventFinalizerProc(struct aeEventLoop *eventLoop, void *clientData);
 typedef void aeBeforeSleepProc(struct aeEventLoop *eventLoop);
@@ -80,6 +84,13 @@ typedef struct aeTimeEvent {
     struct aeTimeEvent *next;
 } aeTimeEvent;
 
+/*Signal event structure*/
+typedef struct aeSigEvent {
+    aeSignalProc * sigProc;
+    void * clientData;
+    struct sigaction oact;
+}aeSignalEvent;
+
 /* A fired event */
 typedef struct aeFiredEvent {
     int fd;
@@ -98,6 +109,8 @@ typedef struct aeEventLoop {
     int stop;
     void *apidata; /* This is used for polling API specific data */
     aeBeforeSleepProc *beforesleep;
+    int signalFd[2];
+    aeSignalEvent *sigevents;
 } aeEventLoop;
 
 /* Prototypes */
@@ -107,6 +120,9 @@ void aeStop(aeEventLoop *eventLoop);
 int aeCreateFileEvent(aeEventLoop *eventLoop, int fd, int mask,
         aeFileProc *proc, void *clientData);
 void aeDeleteFileEvent(aeEventLoop *eventLoop, int fd, int mask);
+void aeSetSignalEventLoop(aeEventLoop *eventLoop);
+int aeCreateSignalEvent(aeEventLoop *eventLoop , int sig ,aeSignalProc *proc,void * clientData);
+int aeDeleteSignalEvent(aeEventLoop *eventLoop , int sig);
 int aeGetFileEvents(aeEventLoop *eventLoop, int fd);
 long long aeCreateTimeEvent(aeEventLoop *eventLoop, long long milliseconds,
         aeTimeProc *proc, void *clientData,

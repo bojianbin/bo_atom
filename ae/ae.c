@@ -39,6 +39,7 @@
 #include <string.h>
 #include <time.h>
 #include <errno.h>
+#include <signal.h>
 
 #include "ae.h"
 
@@ -62,6 +63,31 @@
     #endif
 #endif
 
+static void _aeSignalProc(struct aeEventLoop *eventLoop, int fd, void *clientData, int mask){
+    int ret ;
+    char signum = 0;
+
+    while( (ret = read(fd,&signum,1)) > 0){
+        if(signum > 0 && signum < AE_SIGNUM && eventLoop->sigevents[signum].sigProc != NULL)
+        {
+            eventLoop->sigevents[signum].sigProc(eventLoop,signum,eventLoop->sigevents[signum].clientData);
+        }
+    }
+
+    return ;
+}
+
+static aeEventLoop *gSignalLoop = NULL;
+static void _aeSignalPreProc(int sig)
+{
+    char _sig = sig;
+    if(!gSignalLoop) 
+        return ;
+
+    write(gSignalLoop->signalFd[1],&_sig,1);
+
+    return; 
+}
 aeEventLoop *aeCreateEventLoop(int setsize) {
     aeEventLoop *eventLoop;
     int i;
@@ -69,6 +95,7 @@ aeEventLoop *aeCreateEventLoop(int setsize) {
     if ((eventLoop = malloc(sizeof(*eventLoop))) == NULL) goto err;
     eventLoop->events = malloc(sizeof(aeFileEvent)*setsize);
     eventLoop->fired = malloc(sizeof(aeFiredEvent)*setsize);
+    eventLoop->sigevents = malloc(sizeof(aeSignalEvent) * AE_SIGNUM);
     if (eventLoop->events == NULL || eventLoop->fired == NULL) goto err;
     eventLoop->setsize = setsize;
     eventLoop->lastTime = time(NULL);
@@ -77,17 +104,33 @@ aeEventLoop *aeCreateEventLoop(int setsize) {
     eventLoop->stop = 0;
     eventLoop->maxfd = -1;
     eventLoop->beforesleep = NULL;
+    eventLoop->signalFd[0] = eventLoop->signalFd[1] = -1;
+
+    if(eventLoop->sigevents == NULL) goto err;
+    if(pipe(eventLoop->signalFd) < 0) goto err;
     if (aeApiCreate(eventLoop) == -1) goto err;
     /* Events with mask == AE_NONE are not set. So let's initialize the
      * vector with it. */
     for (i = 0; i < setsize; i++)
         eventLoop->events[i].mask = AE_NONE;
+    for(i = 0 ; i < AE_SIGNUM ; i++)
+    {
+        eventLoop->sigevents[i].sigProc = NULL;
+        eventLoop->sigevents[i].clientData = NULL;
+    }
+    if(aeCreateFileEvent(eventLoop,eventLoop->signalFd[0],AE_READABLE,_aeSignalProc,NULL) < 0)
+        goto err;
     return eventLoop;
 
 err:
     if (eventLoop) {
         free(eventLoop->events);
         free(eventLoop->fired);
+        free(eventLoop->sigevents);
+        if(eventLoop->signalFd[1] >= 0)
+            close(eventLoop->signalFd[1]);
+        if(eventLoop->signalFd[0] >= 0)
+            close(eventLoop->signalFd[0]);
         free(eventLoop);
     }
     return NULL;
@@ -178,7 +221,36 @@ int aeGetFileEvents(aeEventLoop *eventLoop, int fd) {
 
     return fe->mask;
 }
+void aeSetSignalEventLoop(aeEventLoop *eventLoop)
+{
+    gSignalLoop = eventLoop;
+}
+int aeCreateSignalEvent(aeEventLoop *eventLoop,int sig,aeSignalProc *proc,void * clientData){
+    struct sigaction act;
+    if(sig <= 0 || sig >= AE_SIGNUM){
+        return AE_ERR;
+    }
+    eventLoop->sigevents[sig].sigProc = proc;
+    eventLoop->sigevents[sig].clientData = clientData;
 
+    act.sa_handler = _aeSignalPreProc;
+    sigemptyset(&act.sa_mask);
+    act.sa_flags = 0;
+    
+    if(sigaction(sig,&act,& eventLoop->sigevents[sig].oact) < 0)
+        return AE_ERR;
+    
+    return AE_OK;
+}
+int aeDeleteSignalEvent(aeEventLoop * eventLoop,int sig){
+    
+    eventLoop->sigevents[sig].sigProc = NULL;
+    eventLoop->sigevents[sig].clientData = NULL;
+    if(sigaction(sig,& eventLoop->sigevents[sig].oact,NULL) < 0)
+        return AE_ERR;
+
+    return AE_OK;
+}
 static void aeGetTime(long *seconds, long *milliseconds)
 {
     struct timeval tv;

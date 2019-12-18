@@ -23,11 +23,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "anet.h"
+#include <signal.h>
+#include "ae.h"
 
 
 
-
-int main(int argc,char *argv[])
+int nettool_test(int argc,char *argv[])
 {
     int fd ; 
 
@@ -54,6 +55,25 @@ int main(int argc,char *argv[])
         }
         close(clientfd);
     }   
+
+    return 0;
+}
+void SignalProc(struct aeEventLoop *eventLoop, int sig, void *clientData)
+{
+    printf("Get one\n");
+}
+int signal_test()
+{
+    aeEventLoop * loop = aeCreateEventLoop(20);
+    aeSetSignalEventLoop(loop);
+    aeCreateSignalEvent(loop,SIGINT,SignalProc,NULL);
+    
+    aeMain(loop);
+}
+
+int main()
+{
+    signal_test();
 
     return 0;
 }

@@ -1,5 +1,5 @@
 
-TARGET = sample_server
+TARGET = sample_test
 BUILD_DIR = ../build
 FILTER_OUT = 
 OBJ_s = $(patsubst %.c,%.o,$(wildcard ./*.c))

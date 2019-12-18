@@ -125,3 +125,53 @@ int writen(int fd,uint8_t * buf,int size,int max_null_milliseconds)
 
     return 0;
 }
+// 0:no event occur
+// 1:event occur in max_null_milliseconds time
+int eventable(int fd , NetTool_sock_status ask,int max_null_milliseconds)
+{
+	int ret ;
+	fd_set rset;
+	fd_set wset;
+	fd_set eset;
+    struct timeval timeout;
+
+	while(1)
+	{
+		FD_ZERO(&rset);
+		FD_ZERO(&wset);
+		FD_ZERO(&eset);
+
+		if(ask & NetTool_Readable)
+			FD_SET(fd, &rset);
+		if(ask & NetTool_writeable)
+			FD_SET(fd, &wset);
+		if(ask & NetTool_exceptable)
+			FD_SET(fd, &eset);
+
+		
+		timeout.tv_sec = max_null_milliseconds / 1000;
+		timeout.tv_usec = (max_null_milliseconds % 1000) * 1000;
+		if(max_null_milliseconds > 0)
+	    	ret = select(fd+1,&rset,&wset,&eset,&timeout);
+		else
+			ret = select(fd+1,&rset,&wset,&eset,NULL);
+
+		if(ret  == 0)
+        {
+        	//no event occur
+            return 0;
+        }else if(ret < 0)
+        {
+        	//just redo , so time is not accurate.fix me
+            if(errno == EINTR)
+                continue;
+            
+            return 0;
+        }
+
+		//event occurs
+		return 1;
+	}
+
+	return 0;
+}
