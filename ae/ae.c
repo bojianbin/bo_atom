@@ -92,7 +92,7 @@ aeEventLoop *aeCreateEventLoop(int setsize) {
     aeEventLoop *eventLoop;
     int i;
 
-    if ((eventLoop = malloc(sizeof(*eventLoop))) == NULL) goto err;
+    if ((eventLoop = calloc(1,sizeof(*eventLoop))) == NULL) goto err;
     eventLoop->events = malloc(sizeof(aeFileEvent)*setsize);
     eventLoop->fired = malloc(sizeof(aeFiredEvent)*setsize);
     eventLoop->sigevents = malloc(sizeof(aeSignalEvent) * AE_SIGNUM);
@@ -170,6 +170,9 @@ void aeDeleteEventLoop(aeEventLoop *eventLoop) {
     aeApiFree(eventLoop);
     free(eventLoop->events);
     free(eventLoop->fired);
+    free(eventLoop->sigevents);
+    close(eventLoop->signalFd[1]);
+    close(eventLoop->signalFd[0]);
     free(eventLoop);
 }
 
