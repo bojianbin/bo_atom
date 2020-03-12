@@ -687,3 +687,19 @@ int anetRcvbuf(int sfd, int sndsize)
 {
 	return _anetbuf(sfd, sndsize, SO_RCVBUF);
 }
+int anetSetLinger(char * err,int fd)
+{
+    int ret ;
+    struct linger so_linger;
+    so_linger.l_onoff = 1;
+    so_linger.l_linger = 0;
+
+    ret = setsockopt(fd,SOL_SOCKET,SO_LINGER,&so_linger,sizeof(so_linger));
+    if(ret < 0 && err != NULL)
+    {
+        anetSetError(err, "%s", strerror(errno));
+        return -1;
+    }
+
+    return 0;
+}

@@ -79,5 +79,5 @@ int anetFormatSock(int fd, char *fmt, size_t fmt_len);
 int anetSndbuf(int sfd, int sndsize); 
 int anetRcvbuf(int sfd, int sndsize);
 int anetRcvTimeout(char *err, int fd, long long ms); 
-
+int anetSetLinger(char * err,int fd);
 #endif

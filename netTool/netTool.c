@@ -11,8 +11,10 @@
 #include <errno.h>
 #include <unistd.h>
 #include <sys/time.h>
+#include <sys/socket.h>
 
 #include "netTool.h"
+#include "anet.h"
 //max_null_milliseconds <= 0:always wait
 //max_null_milliseconds > 0:wait milliseconds
 int readn(int fd,uint8_t * buf,int size,int max_null_milliseconds)
@@ -174,4 +176,29 @@ int eventable(int fd , NetTool_sock_status ask,int max_null_milliseconds)
 	}
 
 	return 0;
+}
+//try once .but wait for max_wait_millisecons at most to get outcome 
+int nonblockconnect(char * addr , int port ,int max_wait_milliseconds)
+{   
+    int fd;
+    fd = anetTcpNonBlockConnect(NULL,addr,port);
+    if(fd < 0 )
+    {
+        return -1;
+    }else if(! eventable(fd,NetTool_writeable,max_wait_milliseconds))
+    {
+        close(fd);
+        return -1;
+    }else{
+        int err = 0,ret ;
+        socklen_t length = sizeof(err);
+        ret = getsockopt(fd,SOL_SOCKET,SO_ERROR,&err,&length);
+        if(ret < 0 || err != 0)
+        {
+            close(fd);
+            return -1;
+        }
+    }
+
+    return fd;
 }

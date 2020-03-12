@@ -17,5 +17,5 @@ typedef enum {
 int readn(int fd,uint8_t * buf,int size,int max_null_milliseconds);
 int writen(int fd,uint8_t * buf,int size,int max_null_milliseconds);
 int eventable(int fd , NetTool_sock_status ask,int max_null_milliseconds);
-
+int nonblockconnect(char * addr , int port ,int max_wait_milliseconds);
 #endif
