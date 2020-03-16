@@ -703,3 +703,23 @@ int anetSetLinger(char * err,int fd)
 
     return 0;
 }
+int anetCloseExec(char * err,int fd)
+{
+    int ret ;
+    int flags = fcntl(fd, F_GETFD); 
+    if(flags == -1)
+    {
+        anetSetError(err, "fcntl(F_GETFL): %s", strerror(errno));
+        return -1;
+    } 
+    flags |= FD_CLOEXEC;  
+    
+    ret = fcntl(fd, F_SETFD, flags); 
+    if(ret == -1)
+    {
+        anetSetError(err, "fcntl(F_SETFL): %s", strerror(errno));
+        return -1;
+    } 
+
+    return 0; 
+}

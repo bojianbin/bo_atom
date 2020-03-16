@@ -80,4 +80,5 @@ int anetSndbuf(int sfd, int sndsize);
 int anetRcvbuf(int sfd, int sndsize);
 int anetRcvTimeout(char *err, int fd, long long ms); 
 int anetSetLinger(char * err,int fd);
+int anetCloseExec(char * err,int fd);
 #endif
