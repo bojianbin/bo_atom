@@ -254,6 +254,32 @@ int aeDeleteSignalEvent(aeEventLoop * eventLoop,int sig){
 
     return AE_OK;
 }
+
+#if 1
+static void aeGetTime(long *seconds, long *milliseconds)
+{
+ 
+    struct timespec now_time;
+    int ret;
+ 
+    ret = clock_gettime(CLOCK_MONOTONIC,&now_time);
+    if(ret < 0)
+    {
+        struct timeval tv;
+        gettimeofday(&tv, NULL);
+        *seconds = tv.tv_sec;
+        *milliseconds = tv.tv_usec/1000;
+ 
+        return;
+    }
+ 
+    *seconds = now_time.tv_sec;
+    *milliseconds = now_time.tv_nsec / 1000000;
+    
+}
+
+#else
+
 static void aeGetTime(long *seconds, long *milliseconds)
 {
     struct timeval tv;
@@ -262,6 +288,8 @@ static void aeGetTime(long *seconds, long *milliseconds)
     *seconds = tv.tv_sec;
     *milliseconds = tv.tv_usec/1000;
 }
+
+#endif
 
 static void aeAddMillisecondsToNow(long long milliseconds, long *sec, long *ms) {
     long cur_sec, cur_ms, when_sec, when_ms;
